@@ -1,0 +1,163 @@
+{
+  "name": "vs-ai-commit",
+  "displayName": "Vs AI Commit",
+  "description": "The Commit AI Visual Studio Code extension is a powerful tool that allows users to effortlessly generate commit messages using popular commit message norms through the OpenAI API. With this extension, you can streamline your code commit process, ensuring that your version control history is organized and informative.",
+  "version": "1.0.0",
+  "publisher": "tuanha1305",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuanha1305/vs-ai-commit.git"
+  },
+  "icon": "./src/assets/icon.png",
+  "engines": {
+    "vscode": "^1.48.0"
+  },
+  "pricing": "Free",
+  "categories": [
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "artificial intelligence",
+    "commit",
+    "commit message",
+    "commit messages",
+    "commit norm",
+    "commit norms",
+    "generate commit",
+    "generate commit message",
+    "generator commit",
+    "openai",
+    "openai api",
+    "gpt-3",
+    "gpt-4",
+    "gpt-3.5",
+    "gpt"
+  ],
+  "galleryBanner": {
+    "color": "#4F4FFF",
+    "theme": "dark"
+  },
+  "activationEvents": [],
+  "qna": "marketplace",
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commit-ai.generateCommit",
+        "title": "Generate Commit",
+        "category": "Commit AI",
+        "icon": {
+          "light": "./src/assets/button_light.png",
+          "dark": "./src/assets/button_dark.png"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "commit-ai.generateCommit",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Commit AI",
+      "properties": {
+        "commit-ai.openAiApiKey": {
+          "type": "string",
+          "default": null,
+          "markdownDescription": "Your OpenAI API key. You can get one [here](https://platform.openai.com/)."
+        },
+        "commit-ai.prompt.openAiMaxToken": {
+          "type": "number",
+          "default": 500,
+          "minimum": 10,
+          "markdownDescription": "1,000 tokens is about 750 words. The [price](https://openai.com/pricing) per token is different for each model. **``500`` is recommended**"
+        },
+        "commit-ai.commitNorm": {
+          "type": "string",
+          "enum": [
+            "Karma",
+            "Basic",
+            "Dotted",
+            "Emoji"
+          ],
+          "enumDescriptions": [
+            "<type>(<scope>): <subject> <body>",
+            "<type>: <title>",
+            "<type>(<scope>): <subject> <body (with dotted changes)>",
+            "<emoji> <type>: <subject>"
+          ],
+          "default": "Basic",
+          "markdownDescription": "The commit norm to use for generating commit messages."
+        },
+        "commit-ai.prompt.customPrompt": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Set a custom prompt describing the commit message format to generate."
+        },
+        "commit-ai.prompt.openAiTemperature": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 2,
+          "markdownDescription": "Controls randomness: Lowering results in less random completions. As the temperature approaches zero, the model will become deterministic and repetitive. **``0.7`` is recommended**"
+        },
+        "commit-ai.prompt.openAiModel": {
+          "type": "string",
+          "enum": [
+            "gpt-3.5-turbo",
+            "gpt-3.5-turbo-16k",
+            "gpt-4",
+            "gpt-4o",
+            "gpt-4o-mini"
+          ],
+          "enumDescriptions": [
+            "Input: $0.0015 / 1K tokens - Ouput: $0.002 / 1K tokens",
+            "Input: $0.003 / 1K tokens - Ouput: $0.004 / 1K tokens",
+            "Input: $0.03 / 1K tokens - Ouput: $0.06 / 1K tokens",
+            "Input: $0.005 / 1K tokens - Output: $0.015 / 1K tokens",
+            "Input: $0.00015 / 1K tokens - Output: $0.0006 / 1K tokens"
+          ],
+          "default": "gpt-3.5-turbo-16k",
+          "markdownDescription": "The model to use for generating commit messages. The [price](https://openai.com/pricing) per token is different for each model."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "style": "eslint --fix src/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.48.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
+    "esbuild": "^0.19.4",
+    "eslint": "^8.50.0",
+    "eslint-config-standard-with-typescript": "^39.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "author": "Tuan Ha Anh",
+  "homepage": "https://snapface.com/vs-ai-commit#readme",
+  "dependencies": {
+    "openai": "^4.11.1"
+  }
+}
