@@ -25,8 +25,8 @@ The Commit AI Visual Studio Code extension is a powerful tool that allows users 
 
 1. Open Visual Studio Code (VS Code).
 2. Go to the Extensions view by clicking on the square icon in the left sidebar or pressing `Ctrl+Shift+X`.
-3. Search for ``commit ai generator`` in the Extensions Marketplace.
-4. Click the "Install" button for the "Commit AI Generator" extension.
+3. Search for ``ai commit vs code`` in the Extensions Marketplace.
+4. Click the "Install" button for the "AI Commit VS Code" extension.
 
 ## 🛠 Configuration
 
@@ -34,7 +34,7 @@ After installing the extension, you need to configure it with your OpenAI API ke
 
 1. Open VS Code.
 2. Click on the gear icon in the lower-left corner to open the **Settings**.
-3. Search for "Commit AI Generator" in the settings search bar.
+3. Search for "AI Commit VS Code" in the settings search bar.
 4. Enter your OpenAI API key in the designated field.
 
 > [!NOTE]
@@ -44,8 +44,8 @@ After installing the extension, you need to configure it with your OpenAI API ke
 
 1. Open a workspace that contains a Git repository.
 2. Navigate to the Source Control tab in the sidebar.
-3. You'll find a "Commit AI Generator" button alongside the usual Git commit options.
-4. Click on the "Commit AI Generator" button to generate a commit message based on your code changes and the configured settings.
+3. You'll find a "AI Commit VS Code" button alongside the usual Git commit options.
+4. Click on the "AI Commit VS Code" button to generate a commit message based on your code changes and the configured settings.
 
 ## 🐞 Feedback and Issues
 
