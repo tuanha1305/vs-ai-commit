@@ -24,3 +24,7 @@ yarn-error.log*
 
 .vscode
 out
+
+yarn.lock
+
+.vsix

@@ -31,7 +31,7 @@ async function createCompletion(
       {
         role: 'user',
         // eslint-disable-next-line max-len
-        content: 'The respond with the exact Git commit message only, without any additional text or formatting.'
+        content: 'Analyze the changes in the code and generate a concise Git commit message that accurately describes the modifications. The message should be directly related to the actual changes, without any creative additions. Respond with only the commit message, without any extra text or formatting.'
       }
     ],
     model: openAiModel as string,

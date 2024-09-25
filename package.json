@@ -1,6 +1,6 @@
 {
-  "name": "vs-ai-commit",
-  "displayName": "Vs AI Commit",
+  "name": "ai-commit-vs-code",
+  "displayName": "AI Commit VS Code",
   "description": "The Commit AI Visual Studio Code extension is a powerful tool that allows users to effortlessly generate commit messages using popular commit message norms through the OpenAI API. With this extension, you can streamline your code commit process, ensuring that your version control history is organized and informative.",
   "version": "1.0.0",
   "publisher": "tuanha1305",
@@ -50,8 +50,8 @@
         "title": "Generate Commit",
         "category": "Commit AI",
         "icon": {
-          "light": "./src/assets/button_light.png",
-          "dark": "./src/assets/button_dark.png"
+          "light": "./src/assets/magic_white.png",
+          "dark": "./src/assets/magic_dark.png"
         }
       }
     ],
@@ -158,6 +158,7 @@
   "author": "Tuan Ha Anh",
   "homepage": "https://snapface.com/vs-ai-commit#readme",
   "dependencies": {
+    "lru-cache": "^11.0.1",
     "openai": "^4.11.1"
   }
 }
