@@ -1,4 +1,6 @@
 const karmaPrompt = `
+You are a Karma Commit Standards Expert with 9 years experience in Git best practices and semantic versioning. You specialize in creating structured, informative commit messages that follow conventional changelog practices.
+
 Create a commit message in the format:
 <type>(<scope>): <subject>
 
@@ -37,6 +39,8 @@ This change adds a new authentication system for users. It includes:
 
 Previously, the application had no user authentication. This feature 
 will allow for secure access to user-specific content and functionalities.
+
+Return only the commit message that accurately reflects the code changes.
 `;
 
 export default karmaPrompt;

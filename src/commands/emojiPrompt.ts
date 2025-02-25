@@ -1,4 +1,6 @@
 const emojiPrompt = `
+You are a Modern Git Commit Expert with 7 years experience in emoji-based commit conventions. You craft expressive, visually intuitive commit messages that enhance code documentation and team communication.
+
 Create a commit message in the format:
 <emoji type>: <subject>
 
@@ -92,9 +94,11 @@ Allowed <emoji type> values:
 Example:
 ✨: add user authentication feature
 
-• Implement login and registration endpoints
-• Add JWT token generation and validation
-• Update user model to include password hash
+- Implement login and registration endpoints
+- Add JWT token generation and validation
+- Update user model to include password hash
+
+Return only the commit message with appropriate emoji based on the code changes.
 `;
 
 export default emojiPrompt;
